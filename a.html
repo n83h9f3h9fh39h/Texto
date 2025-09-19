@@ -2,7 +2,7 @@
 <title>Goofy Ass Gboard text sticker generator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet"> // La fuente esa del teclado de Google
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <style>
 body {
@@ -21,7 +21,7 @@ body {
 <script>
 colores = ["red","#786662","green"]
 async function colorear(_Texto, Color){
-	if(_Texto){
+	if(_Texto){ // Si el cliente nos llama en su navegador con algun texto en la funcion.
 		_Texto=_Texto.toString()
 		console.log(_Texto)
 		texto = document.getElementById("texto").value
@@ -32,7 +32,7 @@ async function colorear(_Texto, Color){
 	        const canvas = await html2canvas(document.getElementById("colortext"), {backgroundColor: null});
 	        document.getElementById("CajaImagen").src = canvas.toDataURL("image/png")
 	        document.getElementById("colortext").style.display = "none"
-	} else {
+	} else { // Si no, continuar con el texto que hay en la "caja de texto"
 		texto = document.getElementById("texto").value
 		document.getElementById("colortext").style.display = "inline-block"
 		texto = texto.replace(/\n/g, '<br>');
@@ -47,7 +47,7 @@ async function colorear(_Texto, Color){
 </script>
 
 </head>
-<body>
+<body> // Esta parte es una porqueria
 <h1 id="colortext" display: fit-content;>Write your text down below!</h1>
 <p \>
 <textarea rows="4" id="texto" placeholder="Write your text here! "></textarea>
@@ -57,4 +57,4 @@ async function colorear(_Texto, Color){
 </body>
 
 
-<!--- <input type="color" id="colorpick" value="#000000""> cooming soon --->
+<!--- <input type="color" id="colorpick" value="#000000""> --->
